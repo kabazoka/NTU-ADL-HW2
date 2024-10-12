@@ -5,7 +5,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from tqdm import tqdm
 
 # Step 1: Load the Fine-tuned Model and Tokenizer
-model_name_or_path = "finetuned_mt5_small"  # Replace with your model's path if different
+model_name_or_path = "mt5/finetuned_mt5_epoch10"  # Replace with your model's path if different
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
 

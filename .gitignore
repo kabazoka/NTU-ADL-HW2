@@ -1,3 +1,6 @@
 /finetuned_mt5_small
 /results
 /predictions.jsonl
+/data
+/mt5
+/gpt2
