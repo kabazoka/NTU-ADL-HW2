@@ -4,3 +4,5 @@
 /data
 /mt5
 /gpt2
+gpt_submission.jsonl
+mt5_submission.jsonl

@@ -16,7 +16,7 @@ model.to(device)
 
 # Step 2: Load the Dataset
 input_file = "data/public.jsonl"  # Update the path if necessary
-output_file = "predictions.jsonl"  # The file to save the results
+output_file = "mt5_submission.jsonl"  # The file to save the results
 
 data = []
 with open(input_file, 'r', encoding='utf-8') as f:
@@ -62,7 +62,7 @@ for item in tqdm(data, desc="Generating Titles"):
 # Step 4: Save the Results
 with open(output_file, 'w', encoding='utf-8') as f:
     for result in results:
-        json_line = json.dumps(result, ensure_ascii=False)
+        json_line = json.dumps(result, ensure_ascii=True)
         f.write(json_line + '\n')
 
 print(f"Predictions saved to {output_file}")

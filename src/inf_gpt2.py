@@ -23,7 +23,7 @@ model.eval()
 
 # Step 2: Load the Dataset
 input_file = "data/public.jsonl"  # Update the path if necessary
-output_file = "predictions.jsonl"  # The file to save the results
+output_file = "gpt_submission.jsonl"  # The file to save the results
 
 data = []
 with open(input_file, 'r', encoding='utf-8') as f:
