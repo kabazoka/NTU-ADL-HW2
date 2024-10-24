@@ -1,23 +1,29 @@
 # inference.py
 
 import json
+import sys
+import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 from tqdm import tqdm
 
+# Check command-line arguments
+if len(sys.argv) != 3:
+    print("Usage: python inference.py /path/to/input.jsonl /path/to/output.jsonl")
+    sys.exit(1)
+
+input_file = sys.argv[1]
+output_file = sys.argv[2]
+
 # Step 1: Load the Fine-tuned Model and Tokenizer
-model_name_or_path = "mt5/finetuned_mt5_epoch10"  # Replace with your model's path if different
+model_name_or_path = "mt5/finetuned_mt5"  # Update this path if your model is saved elsewhere
 tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
 
 # Move model to GPU if available
-import torch
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model.to(device)
 
 # Step 2: Load the Dataset
-input_file = "data/public.jsonl"  # Update the path if necessary
-output_file = "mt5_submission.jsonl"  # The file to save the results
-
 data = []
 with open(input_file, 'r', encoding='utf-8') as f:
     for line in f:

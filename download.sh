@@ -14,12 +14,12 @@ if ! command_exists gdown ; then
 fi
 
 # Replace 'YOUR_ZIP_FILE_ID' with the actual file ID from Google Drive
-# https://drive.google.com/file/d/12yt1uNiTah10MyjWAPNT23RFwZzn4gdX/view?usp=sharing
-ZIP_FILE_ID=12yt1uNiTah10MyjWAPNT23RFwZzn4gdX
+# https://drive.google.com/file/d/1WfmQSFIoYR_VoQmTauvQy6dAJVpV-K8a/view?usp=sharing
+ZIP_FILE_ID=1WfmQSFIoYR_VoQmTauvQy6dAJVpV-K8a
 
 # Download the zip file
 echo "Downloading the zip file containing inference.py and models..."
-python3 -m gdown --id $ZIP_FILE_ID -O models_and_code.zip
+python3 -m gdown --id $ZIP_FILE_ID -O finetuned_mt5.zip
 
 # Unzip the file
 #echo "Extracting the zip file..."
