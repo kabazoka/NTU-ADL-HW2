@@ -22,8 +22,8 @@ echo "Downloading the zip file containing inference.py and models..."
 python3 -m gdown --id $ZIP_FILE_ID -O finetuned_mt5.zip
 
 # Unzip the file
-#echo "Extracting the zip file..."
-#unzip -o models_and_code.zip
-#rm models_and_code.zip
+echo "Extracting the zip file..."
+unzip finetuned_mt5.zip -d finetuned_mt5
+rm finetuned_mt5.zip
 
-#echo "Download and extraction complete."
+echo "Download and extraction complete."

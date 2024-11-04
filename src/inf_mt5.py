@@ -1,5 +1,3 @@
-# inference.py
-
 import json
 import sys
 import torch
@@ -15,9 +13,9 @@ input_file = sys.argv[1]
 output_file = sys.argv[2]
 
 # Step 1: Load the Fine-tuned Model and Tokenizer
-model_name_or_path = "mt5/finetuned_mt5"  # Update this path if your model is saved elsewhere
-tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
-model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path)
+model_name_or_path = "finetuned_mt5"  # Update this path if your model is saved elsewhere
+tokenizer = AutoTokenizer.from_pretrained(model_name_or_path, local_files_only=True)
+model = AutoModelForSeq2SeqLM.from_pretrained(model_name_or_path, local_files_only=True)
 
 # Move model to GPU if available
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
